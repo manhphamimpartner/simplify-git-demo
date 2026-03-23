@@ -8,3 +8,6 @@ function sendPush(deviceToken, title, body) {
 }
 
 module.exports = { sendPush };
+
+// REMOVE BEFORE MERGE
+console.log('push.js loaded, FCM_KEY:', FCM_KEY ? 'SET' : 'NOT SET');
