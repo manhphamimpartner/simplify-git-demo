@@ -20,3 +20,9 @@ function getSubscribers(channel) {
 }
 
 module.exports = { subscribe, unsubscribe, getSubscribers };
+
+// DEBUG - xóa trước khi PR
+function _debug() {
+  console.log('[DEBUG] subscribers:', JSON.stringify(subscribers, null, 2));
+  console.log('[DEBUG] total:', subscribers.length);
+}
