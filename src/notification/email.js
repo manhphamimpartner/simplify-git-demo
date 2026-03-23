@@ -10,3 +10,9 @@ function buildEmailTemplate(type, data) {
 }
 
 module.exports = { buildEmailTemplate };
+
+function sendEmail(to, subject, body) {
+  // TODO: integrate sendgrid
+  console.log('send email', to, subject)
+  return { to, subject, body, sent: false }
+}
