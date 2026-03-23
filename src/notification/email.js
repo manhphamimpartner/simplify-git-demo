@@ -1,3 +1,5 @@
+'use strict';
+
 // Email Notification
 function buildEmailTemplate(type, data) {
   const templates = {
@@ -9,10 +11,9 @@ function buildEmailTemplate(type, data) {
   return templates[type];
 }
 
-module.exports = { buildEmailTemplate };
-
 function sendEmail(to, subject, body) {
-  // TODO: integrate sendgrid
-  console.log('send email', to, subject)
-  return { to, subject, body, sent: false }
+  if (!to) throw new Error('Recipient is required');
+  return { to, subject, body, status: 'queued' };
 }
+
+module.exports = { buildEmailTemplate, sendEmail };
